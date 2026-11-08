@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1e4">
+  <title>Little Acre — a pocket farm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little Acre home"><span class="brand-mark">✿</span><span>little<span class="brand-light">acre</span></span></a>
+      <div class="top-note"><span class="sun-dot"></span> a tiny farm, all yours</div>
+      <button class="icon-button" id="soundBtn" aria-label="Toggle sound" title="Toggle sound">♫</button>
+    </header>
+
+    <section class="game-layout" aria-label="Farm game">
+      <section class="farm-column">
+        <div class="farm-heading">
+          <div><p class="eyebrow">YOUR HOMESTEAD</p><h1>Morning, farmer <span class="wave">☀</span></h1></div>
+          <div class="weather-pill" id="weatherPill"><span id="weatherIcon">☀</span><span id="weatherText">Clear skies</span></div>
+        </div>
+        <section class="scene-card">
+          <div class="scene-topline"><span class="scene-location"><span class="pin">⌖</span> Willow Creek Farm</span><span class="season-tag" id="seasonTag">SPRING</span></div>
+          <div class="farm-scene" id="farmScene">
+            <div class="scene-sun" aria-hidden="true"></div><div class="cloud cloud-one" aria-hidden="true"></div><div class="cloud cloud-two" aria-hidden="true"></div>
+            <div class="scene-hill hill-back"></div><div class="scene-hill hill-front"></div>
+            <div class="tree tree-one"><i></i><b></b></div><div class="tree tree-two"><i></i><b></b></div>
+            <div class="fence fence-top" aria-hidden="true"></div>
+            <div class="garden" id="garden" role="group" aria-label="Your nine farm plots"></div>
+            <div class="fence fence-bottom" aria-hidden="true"></div>
+            <div class="scene-flower flower-one">✿</div><div class="scene-flower flower-two">✿</div><div class="scene-flower flower-three">✿</div>
+            <div class="scene-caption"><span class="caption-sparkle">✦</span> a little patch of possibility <span class="caption-sparkle">✦</span></div>
+          </div>
+          <div class="scene-footer"><span><span class="legend-dot dirt-dot"></span>9 cozy plots</span><span><span class="legend-dot water-dot"></span>Water crops to help them grow</span><span class="season-progress"><span id="seasonDay">Day 1 of 7</span><span class="progress-track"><i id="seasonProgress"></i></span></span></div>
+        </section>
+        <div class="toolbar-wrap">
+          <div class="toolbar-label"><span class="eyebrow">YOUR TOOLBELT</span><span class="tool-hint">Choose a tool, then tap a plot</span></div>
+          <div class="toolbar" id="toolbar" role="toolbar" aria-label="Farm tools"></div>
+        </div>
+        <div class="mobile-actions"><button class="sleep-button" id="sleepBtnMobile">☾ &nbsp; End the day</button></div>
+      </section>
+
+      <aside class="side-column">
+        <section class="day-card">
+          <div class="day-head"><div><span class="eyebrow">YOUR LITTLE JOURNEY</span><h2 id="dateLabel">Spring · Day 1</h2></div><div class="day-stamp" id="dayStamp">01</div></div>
+          <div class="day-stats"><div class="stat"><span class="stat-icon energy-icon">⚡</span><div><small>ENERGY</small><strong id="energyLabel">100 / 100</strong></div></div><div class="energy-track"><i id="energyBar"></i></div><div class="stat money-stat"><span class="stat-icon">◉</span><div><small>PURSE</small><strong id="goldLabel">90 <em>g</em></strong></div><span class="coin-gain" id="coinGain"></span></div></div>
+          <button class="sleep-button desktop-sleep" id="sleepBtn">☾ &nbsp; End the day <span>↗</span></button>
+        </section>
+
+        <section class="seed-card">
+          <div class="section-heading"><div><span class="eyebrow">SEASONAL SEEDS</span><h2>Grow something lovely</h2></div><span class="seed-sprout">♧</span></div>
+          <p class="helper-copy" id="seasonCopy">Happy little crops for spring.</p>
+          <div class="seed-list" id="seedList"></div>
+        </section>
+
+        <section class="inventory-card">
+          <div class="section-heading"><div><span class="eyebrow">YOUR HARVEST</span><h2>Pantry & pockets</h2></div><span class="basket-icon">▧</span></div>
+          <div class="inventory-row"><span class="inventory-crop-icon">✿</span><div class="inventory-copy"><strong>Fresh harvest</strong><small>Sold when picked</small></div><strong class="inventory-total" id="harvestTotal">0 <small>crops</small></strong></div>
+          <div class="inventory-row"><span class="inventory-crop-icon seed-bag">♧</span><div class="inventory-copy"><strong>Seed pouch</strong><small id="seedCount">0 seeds</small></div><span class="inventory-total pouch-note">Ready to plant</span></div>
+        </section>
+
+        <section class="quest-card"><span class="quest-icon">✧</span><div><span class="eyebrow">TODAY'S LITTLE GOAL</span><p id="goalText">Give your first plot some love.</p><div class="quest-progress"><i id="goalProgress"></i></div></div><span class="quest-count" id="goalCount">0/1</span></section>
+      </aside>
+    </section>
+    <footer class="footer"><span>Take it slow. The seasons will turn. <span>♥</span></span><button id="resetBtn" class="reset-button">Start a new save</button></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal" aria-hidden="true"><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><span class="modal-deco">✿</span><p class="eyebrow">A NEW MORNING</p><h2 id="modalTitle">A day well spent</h2><p id="modalText"></p><button class="primary-button" id="modalClose">Let's go <span>→</span></button></section></div>
+  <script src="game.js"></script>
+</body>
+</html>
